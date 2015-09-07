@@ -1,0 +1,29 @@
+Vim用得久了，插件也越来越多，如何才能有效地管理这些插件，快速搭建/恢复自己熟悉的工作环境，是每一个使用vim应该思考的问题，vundle的出现使得管理这些插件变得非常方便快捷，赶紧来试试吧。
+
+1 安装vundle
+
+git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+2 修改.vimrc,添加语句
+
+" For vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+" vim-scripts repos
+Bundle 'bash-support.vim'
+Bundle 'perl-support.vim'
+filetype plugin indent on "
+
+其中语句Bundle后的插件名称来自于http://vim-scripts.org/vim/scripts.html的Name列
+
+3 安装插件并测试
+
+打开vim在命令模式下键入:BundleInstall开始下载安装，从log里可以看出是git clone *.git到~/.vim/下的
+
+4 其它相关命令
+
+更新插件  :BundleInstall!
+缷载插件  :BundleClean
